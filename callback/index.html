@@ -6,6 +6,18 @@
 </head>
 <body>
   <h1>TikTok Authorization</h1>
-  <p>Authorization callback received. You may return to Chill Review.</p>
+  <p id="status">Returning authorization result to AI Video Factory...</p>
+
+  <script>
+    const localCallback =
+      "http://127.0.0.1:53682/callback/" + window.location.search;
+
+    document.getElementById("status").textContent =
+      "Authorization received. Returning to AI Video Factory...";
+
+    setTimeout(() => {
+      window.location.href = localCallback;
+    }, 700);
+  </script>
 </body>
 </html>
